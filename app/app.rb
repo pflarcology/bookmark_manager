@@ -1,14 +1,12 @@
-# require 'sinatra/base'
-#
-# class BookmarksManager < Sinatra::Base
-#   get '/links' do
-#     'Hello BookmarksManager!'
-#   end
-#   #
-#   # get '/links' do
-#   #
-#   # end
-#
-#   # start the server if ruby file executed directly
-#   run! if app_file == $0
-# end
+require 'sinatra/base'
+require_relative './models/link.rb'
+
+class BookmarksManager < Sinatra::Base
+  get '/links' do
+    @links = Link.all
+    erb :'links/index'
+  end
+  #
+  # # start the server if ruby file executed directly
+  run! if app_file == $0
+end

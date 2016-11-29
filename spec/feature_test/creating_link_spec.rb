@@ -8,7 +8,7 @@ feature "creating a link" do
 
     expect(page.status_code).to eq 200
 
-    within 'ul#links' do
+    within 'ol#links' do
       expect(page).to have_content('Google')
     end
   end
