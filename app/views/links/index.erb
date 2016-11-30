@@ -1,14 +1,14 @@
 <h1> All your links are belong to us </h1>
 
 <ol id='links'>
-  <% @links.each do |link| %>
-    <li>
-      Title: <%= link.title %>
-      URL: <%= link.url %>
-    </li>
-  <% end %>
+ <% @links.each do |link| %>
+   <li>
+     Title: <%= link.title %>
+     URL: <%= link.url %>
+   </li>
+ <% end %>
 </ol>
 
 <form action='/links/new'>
-  <input type='submit' value="Create new link" />
-</form> 
+ <input type='submit' value="Create new link" />
+</form>
