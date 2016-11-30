@@ -12,4 +12,5 @@ end
 
 include DatamapperSetup
 
-setup
+
+dm_setup
