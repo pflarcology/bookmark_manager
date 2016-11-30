@@ -7,17 +7,13 @@ class BookmarksManager < Sinatra::Base
     erb :'links/index'
   end
 
-
-
   get '/links/new' do
-    erb :new
-
-
+    erb :'links/new'
   end
 
   post '/links/create' do
-
-
+    Link.create(title: params[:title], url: params[:url])
+    redirect '/links'
   end
   #
   # # start the server if ruby file executed directly

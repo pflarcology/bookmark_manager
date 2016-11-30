@@ -11,7 +11,7 @@ feature "should see form" do
 
       expect(page.current_path).to eq('/links')
 
-      within 'ul#links' do
+      within 'ol#links' do
         expect(page).to have_content('This is Bing')
       end
     end
