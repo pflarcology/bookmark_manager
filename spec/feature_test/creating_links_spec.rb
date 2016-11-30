@@ -1,5 +1,8 @@
 require 'spec_helper'
 
+
+
+
 feature "should see form" do
   scenario "When a user visits /links should see" do
 
@@ -14,5 +17,7 @@ feature "should see form" do
       within 'ol#links' do
         expect(page).to have_content('This is Bing')
       end
+
     end
+
   end
