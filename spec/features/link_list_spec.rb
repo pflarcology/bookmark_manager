@@ -1,4 +1,4 @@
-require 'spec_helper'
+
 
 RSpec.feature 'Link list' do
   scenario 'we want to see a list of links and be able to click on one' do
