@@ -1,21 +1,20 @@
 require 'spec_helper'
 
-feature "should see form" do
-  before(:each) do
-    Link.create(url: "www.yahoo.com", title: 'Yahoo', tags: [Tag.first_or_create(name: 'oldsearch', 'email')])
-  end
+feature "can input multiple tages" do
 
 
-  scenario "When a user visits /links should see" do
 
-      visit '/tags/oldsearch'
-      expect(page.status_code).to eq(200)
+
+  scenario "I should be able to add multiple tags to one link" do
+      visit '/links/new'
+      fill_in 'title', with: 'This is Bing'
+      fill_in 'url', with: 'https://www.bing.com'
+      fill_in 'name', with: 'search microsoft'
+      click_button 'Create new link'
+      link = Link.first
+      expect(link.tags.map(&:name)).to include('search', 'microsoft')
       within 'ol#links' do
-        expect(page).to have_content('Yahoo')
-        expect(page).to have_content('oldsearch')
+        expect(page).to have_content("Bing")
       end
-
-
   end
-
 end
