@@ -4,7 +4,7 @@ require_relative './models/link.rb'
 require_relative './models/tag.rb'
 require 'pry'
 require_relative './models/data_mapper_setup'
-require_relative './models/user'
+require_relative './models/user.rb'
 
 
 class BookmarksManager < Sinatra::Base
