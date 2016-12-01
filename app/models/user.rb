@@ -1,4 +1,6 @@
 require 'bcrypt'
+require 'dm-validations'
+
 
 class User
 
@@ -6,8 +8,13 @@ class User
   property :id, Serial
   property :email, String
   property :password_digest, Text
+  attr_reader :password
+  attr_accessor :confirmation
+
+  # validates_confirmation_of :password
 
   def password=(password)
+    @password = password
     self.password_digest = BCrypt::Password.create(password)
   end
 

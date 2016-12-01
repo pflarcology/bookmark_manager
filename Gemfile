@@ -10,6 +10,7 @@ gem 'database_cleaner'
 gem 'pry'
 gem 'rake'
 gem 'bcrypt'
+gem 'dm-validations'
 
 group :test do
   gem "rspec"

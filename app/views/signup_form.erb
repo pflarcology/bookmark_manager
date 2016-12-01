@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
-  <body>
-    <form action='/users' method='post' >
-      <input type='text' name='email'>
-      <input type='text' name='password'>
-      <input type='submit' value='Sign up'>
-    </form>
-  </body>
-</html>
+<form action='/users' method='post'>
+  <label for='email'>
+    Email: <input name='email' type='text'>
+  </label>
+  <label for='password'>
+    Password: <input name='password' type='password'>
+  </label>
+  <label for='confirmation'>
+    Password: <input name='confirmation' type='password'>
+  </label>
+  <input type='submit' value='Sign up'>
+</form>
