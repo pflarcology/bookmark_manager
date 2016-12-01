@@ -1,6 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
-require_relative './modules'
+require_relative './data_mapper_setup'
 require_relative './tag'
 
 class Link
@@ -13,9 +13,4 @@ class Link
 
 end
 
-
-
-include DatamapperSetup
-
-
-dm_setup
+setup

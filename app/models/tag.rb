@@ -1,6 +1,6 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
-require_relative './modules'
+require_relative './data_mapper_setup'
 
 class Tag
   include DataMapper::Resource
@@ -9,7 +9,3 @@ class Tag
   property :name, String
 
 end
-
-include DatamapperSetup
-
-dm_setup
