@@ -1,5 +1,5 @@
 
-RSpec.feature "filter by tags" do
+feature "filter by tags" do
   scenario "checks that only Links tagged with bubbles are present" do
     visit('/links/new')
     fill_in 'title', :with => 'Facebook'

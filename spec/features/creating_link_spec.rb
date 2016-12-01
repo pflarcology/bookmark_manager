@@ -1,6 +1,6 @@
 
 
-RSpec.feature 'Link add new' do
+feature 'Link add new' do
   scenario 'we want to add the website address and title to our bookmark manager' do
 
     visit '/links/new'

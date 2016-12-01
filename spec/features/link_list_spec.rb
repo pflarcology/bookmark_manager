@@ -1,6 +1,6 @@
 
 
-RSpec.feature 'Link list' do
+feature 'Link list' do
   scenario 'we want to see a list of links and be able to click on one' do
     Link.create(url: 'http://www.makersacademy.com/', title: 'Makers Academy')
 
