@@ -30,22 +30,9 @@ class BookmarksManager < Sinatra::Base
   end
 
   get '/tags/:name' do
-      @link_tag = LinkTag.all
-      @links = Link.all
-      @tags = Tag.all
-      link_id = 0
-      tag_id = 0
-      @printed_links = []
-      @tags.each do |tag|
-        tag_id = tag.id if tag.name == params[:name]
-      end
-      @link_tag.each do |link_tags|
-        link_id = link_tags.link_id if link_tags.tag_id == tag_id
-      end
-      @links.each do |link|
-        @printed_links << link.url if link_id == link.id
-      end
-      erb :tags
+      tag = Tag.first(name: params[:name])
+      @links = tag ? tag.links : []
+      erb :'links/index'
   end
   #
   # # start the server if ruby file executed directly
