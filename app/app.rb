@@ -4,16 +4,37 @@ require_relative './models/link.rb'
 require_relative './models/tag.rb'
 require 'pry'
 require_relative './models/data_mapper_setup'
+require_relative './models/user'
+
 
 class BookmarksManager < Sinatra::Base
 
+  enable  :sessions
+  set :sesssion_secret, 'super secret'
+
   get '/' do
+  end
+
+  helpers do
+    def current_user
+      @current_user ||= User.get(session[:user_id])
+    end
+  end
+
+  get '/users/new' do
+    erb :'signup_form'
+  end
+
+  post '/users' do
+    user = User.create(email: params[:email], password: params[:password])
+    session[:user_id] = user.id
     redirect '/links'
   end
 
   get '/links' do
     @links = Link.all
     @tags = Tag.all
+
     erb :'links/index'
   end
 
