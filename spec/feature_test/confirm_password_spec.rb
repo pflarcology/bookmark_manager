@@ -6,7 +6,7 @@ def failed_sign_up
   expect(page.status_code).to eq(200)
   fill_in 'email', with: 'user@email.com'
   fill_in 'password',  with: 'password'
-  fill_in 'password_confirmation', with: 'passwords'
+  fill_in 'password_confirm', with: 'passwords'
   click_button "Sign up"
 end
 
