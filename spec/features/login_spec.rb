@@ -1,14 +1,18 @@
+require_relative 'web_helpers'
+
+
 feature "Signing up" do
   scenario "fills in sign up form" do
 
-    visit('/')
-    fill_in 'email', :with => "abc@gmail.com"
-    fill_in 'password', :with => "password"
-    click_button('sign-up')
+    sign_up
 
-    expect(page.current_path).to eq '/sign-in'
+    expect(page.current_path).to eq '/links'
 
     visit('/links')
+
+    expect(page).to have_content("Welcome abc@gmail.com !")
+
+    expect{sign_up}.to change{User.count}.by 1
 
 
   end
