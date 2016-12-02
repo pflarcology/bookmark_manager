@@ -10,7 +10,9 @@
     <% if get_user_id %>
       Welcome <%= get_user_id.email %> !
     <% end %>
-
+    <% if flash[:notice] %>
+      <div id='notice'><%= flash[:notice] %></div>
+    <% end %>
     <%= yield %>
 
   </body>
