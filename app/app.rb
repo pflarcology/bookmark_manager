@@ -4,6 +4,14 @@ require 'sinatra/base'
 require_relative 'data_mapper_setup'
 
 class BookmarkManager < Sinatra::Base
+
+  get '/' do
+      erb :'links/login'
+  end
+
+  post '/sign-in' do
+
+  end
   get '/links' do
     @links = Link.all
     erb(:'links/index')
